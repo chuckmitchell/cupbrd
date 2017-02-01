@@ -10,6 +10,6 @@
 
 FactoryGirl.define do
   factory :food do
-    name "MyString"
+    name Faker::Food.ingredient
   end
 end

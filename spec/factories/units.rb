@@ -12,8 +12,8 @@
 
 FactoryGirl.define do
   factory :unit do
-    name "gram"
-    symbol "g"
-    type :dry
+    name "unit name"
+    symbol "unit symbol"
+    type [:dry, :liquid, :whole].sample
   end
 end
