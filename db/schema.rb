@@ -22,12 +22,16 @@ ActiveRecord::Schema.define(version: 20170201021813) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.decimal  "quantity"
+    t.decimal  "quantity",   default: "1.0"
     t.integer  "unit_id"
-    t.integer  "count"
+    t.integer  "count",      default: 1
     t.integer  "food_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["food_id"], name: "index_items_on_food_id", using: :btree
+    t.index ["unit_id"], name: "index_items_on_unit_id", using: :btree
+    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
   create_table "units", force: :cascade do |t|
