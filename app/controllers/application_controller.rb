@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Token::ControllerMethods
 
@@ -14,14 +15,13 @@ class ApplicationController < ActionController::API
   end
 
   def authenticate_token
-    authenticate_with_http_token do |token, options|
+    authenticate_with_http_token do |token, _options|
       @current_user = User.find_by(api_key: token)
     end
   end
 
   def render_unauthorized(realm = "Application")
-    headers["WWW-Authenticate"] = %(Token realm="#{realm.gsub(/"/, "")}")
+    headers["WWW-Authenticate"] = %(Token realm="#{realm.delete('"')}")
     render json: 'Bad credentials', status: :unauthorized
   end
-
 end
