@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170201021813) do
   create_table "items", force: :cascade do |t|
     t.decimal  "quantity",   default: "1.0"
     t.integer  "unit_id"
-    t.integer  "count",      default: 1
+    t.integer  "remaining",  default: 100
     t.integer  "food_id"
     t.integer  "user_id"
     t.datetime "created_at",                 null: false

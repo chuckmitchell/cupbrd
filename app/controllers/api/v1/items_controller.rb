@@ -48,7 +48,7 @@ module Api::V1
 
     # Only allow a trusted parameter "white list" through.
     def item_params
-      params.require(:item).permit(:user_id, :quantity, :unit_id, :count, :food_id)
+      params.require(:item).permit(:user_id, :quantity, :unit_id, :remaining, :food_id)
     end
   end
 end
