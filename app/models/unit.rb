@@ -15,4 +15,6 @@ class Unit < ApplicationRecord
 
   validates :name, presence: true
   validates :measurement_type, presence: true
+
+  has_many :items
 end
