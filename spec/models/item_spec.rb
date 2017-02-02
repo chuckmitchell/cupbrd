@@ -3,10 +3,11 @@
 # Table name: items
 #
 #  id         :integer          not null, primary key
-#  quantity   :decimal(, )
+#  quantity   :decimal(, )      default("1")
 #  unit_id    :integer
-#  count      :integer
+#  remaining  :integer          default("100")
 #  food_id    :integer
+#  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

@@ -14,6 +14,6 @@ FactoryGirl.define do
   factory :unit do
     name "unit name"
     symbol "unit symbol"
-    type [:dry, :liquid, :whole].sample
+    measurement_type ["dry", "liquid", "whole"].sample
   end
 end
