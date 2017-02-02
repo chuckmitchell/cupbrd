@@ -29,6 +29,9 @@ gem 'active_model_serializers'
 # Attack protection for api.
 gem 'rack-attack'
 
+# Spoonacular APIs
+gem 'spoonacular'
+
 group :development, :test do
   # Ruby linting
   gem 'rubocop'
@@ -42,6 +45,9 @@ group :development, :test do
   gem 'factory_girl_rails'
   # Fake info
   gem 'faker'
+
+  # .env to ENV
+  gem 'dotenv-rails'
 end
 
 group :development do
